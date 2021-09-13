@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'uploader',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -86,3 +87,17 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIA57IYNILPJ45CH7JK'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'shakeeb-crm'
+
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_REGION_NAME = 'us-east-2'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
